@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SmartCity.iml" filepath="$PROJECT_DIR$/.idea/modules/SmartCity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SmartCity.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SmartCity.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SmartCity.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SmartCity.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SmartCity.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SmartCity.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SmartCity.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SmartCity.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>
