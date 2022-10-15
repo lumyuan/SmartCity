@@ -5,7 +5,7 @@ import com.example.smartcity.base.BaseActivity
 import com.example.smartcity.databinding.ActivityNavigationBinding
 import com.example.smartcity.model.NavigationViewModel
 import com.example.smartcity.model.SmartCitySettingsModel
-import com.example.smartcity.ui.adapters.GlideLoaderAdapter
+import com.example.smartcity.ui.adapters.SimpleGlideLoaderAdapter
 import com.example.smartcity.ui.dialogs.InternetSettingDialog
 import com.example.smartcity.utils.FastFunctionUtils
 import com.youth.banner.indicator.CircleIndicator
@@ -44,7 +44,7 @@ class NavigationActivity : BaseActivity() {
 
         viewModel = initViewModel(NavigationViewModel::class.java)
         viewModel.pictureList.observe(this){
-            binding.banner.adapter = GlideLoaderAdapter(it!!.rows!!)
+            binding.banner.adapter = SimpleGlideLoaderAdapter(it!!.rows!!)
             pageSize = it.rows!!.size
         }
         viewModel.getData()

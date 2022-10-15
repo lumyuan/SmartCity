@@ -1,5 +1,6 @@
 package com.example.smartcity
 
+import com.example.smartcity.utils.SimpleEncryptUtil
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -12,6 +13,10 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        val str = "hello 你好 ⑤🚗"
+        val encrypt = SimpleEncryptUtil.encrypt(str)
+        println(encrypt)
+        val decode = SimpleEncryptUtil.decode(encrypt)
+        println(decode)
     }
 }

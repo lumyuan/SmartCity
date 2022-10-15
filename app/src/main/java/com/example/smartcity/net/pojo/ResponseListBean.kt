@@ -5,11 +5,9 @@ import com.example.smartcity.bean.BaseBean
 /**
  * 首页轮播图实体类
  */
-class NavigationPictureListBean: BaseBean() {
-    var rows: ArrayList<NavigationPictureBean>? = null
-    var total: String? = null
+class ResponseListBean<T>: BaseBean() {
+    var rows: ArrayList<T>? = null
     override fun toString(): String {
         return "NavigationPictureListBean(rows=$rows, total=$total)"
     }
-
 }

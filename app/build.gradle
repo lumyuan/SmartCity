@@ -57,4 +57,7 @@ dependencies {
 
     //全面屏适配
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+
+    //下拉刷新
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 }

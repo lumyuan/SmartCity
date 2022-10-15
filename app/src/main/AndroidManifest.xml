@@ -25,6 +25,15 @@
         tools:replace="android:theme"
         tools:targetApi="31">
         <activity
+            android:name=".activities.UserInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NewsListActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.StartActivity"
             android:exported="true">
             <intent-filter>
@@ -38,7 +47,7 @@
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>

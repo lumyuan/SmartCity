@@ -25,18 +25,10 @@ abstract class BaseFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val uiModeManager =
-            requireActivity().getSystemService(Context.UI_MODE_SERVICE) as UiModeManager
-        ImmersionBar.with(this)
-            .transparentStatusBar()  //透明状态栏，不写默认透明色
-            .statusBarDarkFont(uiModeManager.nightMode == UiModeManager.MODE_NIGHT_NO)
-            .keyboardEnable(true)  //解决软键盘与底部输入框冲突问题，默认为false，还有一个重载方法，可以指定软键盘mode
-            .keyboardMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)  //单独指定软键盘模式
-            .init()
     }
 
-    override fun onPause() {
-        super.onPause()
+    override fun onResume() {
+        super.onResume()
         val appCompatActivity = requireActivity() as AppCompatActivity
         if (isFirstShow){
             loadSingData(appCompatActivity)

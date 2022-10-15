@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
 import androidx.viewpager.widget.PagerAdapter
 
-class ViewPagerAdapter(private val viewBindings: Array<ViewBinding>) : PagerAdapter(){
+class ViewPagerAdapter<T: ViewBinding>(private val viewBindings: MutableList<T>) : PagerAdapter(){
     override fun getCount(): Int {
         return viewBindings.size
     }

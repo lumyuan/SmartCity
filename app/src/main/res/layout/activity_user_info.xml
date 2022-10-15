@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:animateLayoutChanges="true"
+    tools:context=".activities.UserInfoActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolBar"
+            app:title="@string/app_name"
+            android:layout_marginTop="40dp"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:animateLayoutChanges="true">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_alignParentBottom="true"
+                    android:animateLayoutChanges="true"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
+
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/userIcon"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:src="@mipmap/ic_launcher" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toEndOf="@+id/userIcon"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:id="@+id/userLayout">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:text="@string/app_name"
+                        android:layout_weight="1"
+                        android:id="@+id/nickname"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:text="@string/user_name"
+                        android:textColor="@color/gray_text"
+                        android:layout_weight="1"
+                        android:id="@+id/username"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:text="身份证"
+                        android:textColor="@color/gray_text"
+                        android:id="@+id/idCard"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:id="@+id/updateSex">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sex"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sex"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray_text"
+                            android:layout_marginStart="10dp"
+                            android:singleLine="true"
+                            android:ellipsize="marquee"
+                            android:id="@+id/sex"
+                            android:layout_weight="1"/>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@mipmap/ic_sc_right"
+                            android:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="邮箱"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="邮箱"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray_text"
+                            android:layout_marginStart="10dp"
+                            android:singleLine="true"
+                            android:ellipsize="marquee"
+                            android:id="@+id/email"
+                            android:layout_weight="1"/>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@mipmap/ic_sc_right"
+                            android:tint="@color/black"
+                            tools:ignore="UseAppTint"
+                            android:visibility="gone"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:id="@+id/updateTel"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="电话"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="电话"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray_text"
+                            android:layout_marginStart="10dp"
+                            android:singleLine="true"
+                            android:id="@+id/tel"
+                            android:ellipsize="marquee"
+                            android:layout_weight="1"/>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@mipmap/ic_sc_right"
+                            android:tint="@color/black"
+                            tools:ignore="UseAppTint" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="余额"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="余额"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray_text"
+                            android:layout_marginStart="10dp"
+                            android:singleLine="true"
+                            android:ellipsize="marquee"
+                            android:id="@+id/balance"
+                            android:layout_weight="1"/>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@mipmap/ic_sc_right"
+                            android:tint="@color/black"
+                            tools:ignore="UseAppTint"
+                            android:visibility="gone"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:id="@+id/signOut"
+                android:layout_marginEnd="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/gray_text"
+                        android:text="@string/sign_out"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

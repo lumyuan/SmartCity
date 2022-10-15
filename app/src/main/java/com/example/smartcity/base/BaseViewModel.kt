@@ -10,5 +10,5 @@ import com.example.smartcity.bean.LoadState
  */
 abstract class BaseViewModel : ViewModel() {
     // 加载状态
-    val loadState = MutableLiveData<LoadState>()
+    open val loadState = MutableLiveData<LoadState>()
 }
