@@ -1,11 +1,10 @@
 package com.example.smartcity.net
 
 import com.example.smartcity.bean.BaseBean
-import com.example.smartcity.model.LoginModel
-import com.example.smartcity.net.params.LoginBean
-import com.example.smartcity.net.params.RegisterBean
+import com.example.smartcity.net.params.*
 import com.example.smartcity.net.pojo.ResponseListBean
 import com.example.smartcity.net.pojo.*
+import okhttp3.MultipartBody
 import retrofit2.http.*
 
 /**
@@ -30,7 +29,7 @@ interface ApiService {
     @GET("/prod-api/press/press/list")
     suspend fun getNewsClassifyList(@Query("type") type: String): ResponseListBean<NewsBean>
 
-    @Headers(*["Content-Type: application/json;charset=UTF-8"])
+    @Headers("Content-Type: application/json;charset=UTF-8")
     @POST("/prod-api/api/register")
     suspend fun register(@Body registerBean: RegisterBean): BaseBean
 
@@ -40,4 +39,20 @@ interface ApiService {
 
     @GET("/prod-api/api/common/user/getInfo")
     suspend fun getUser(@Header("Authorization") token: String): GetUserBean
+
+    @Multipart
+    @POST("/prod-api/common/upload")
+    suspend fun uploadFile(@Header("Authorization") token: String, @Part file: MultipartBody.Part): UploadFileBean
+
+    @PUT("/prod-api/api/common/user")
+    suspend fun updateUser(@Header("Authorization") token: String, @Body updateUserBean: UpdateUserBean): BaseBean
+
+    @GET("/prod-api/api/allorder/list")
+    suspend fun getOrderList(@Header("Authorization") token: String): ResponseListBean<OrderBean>
+
+    @PUT("/prod-api/api/common/user/resetPwd")
+    suspend fun updatePassword(@Header("Authorization") token: String, @Body updatePasswordBean: UpdatePasswordBean): BaseBean
+
+    @POST("/prod-api/api/common/feedback")
+    suspend fun feedback(@Header("Authorization") token: String, @Body feedbackBean: FeedbackBean): BaseBean
 }

@@ -3,19 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/drawable/shape_login_radius.xml" value="0.1905" />
+        <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/activity_feedback.xml" value="0.25" />
         <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/activity_main.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/activity_my_order.xml" value="0.3605072463768116" />
         <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/activity_navigation.xml" value="0.33" />
         <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/activity_news_list.xml" value="0.19114583333333332" />
         <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/activity_start.xml" value="0.22" />
-        <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/activity_user_info.xml" value="0.25" />
+        <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/activity_user_info.xml" value="0.33" />
         <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/dialog_internet_setting.xml" value="0.33" />
+        <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/dialog_update_password.xml" value="0.33" />
+        <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/dialog_update_user.xml" value="0.33" />
         <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/fragment_home_news.xml" value="0.19114583333333332" />
         <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/fragment_mine_store.xml" value="0.33" />
         <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/fragment_news.xml" value="0.1765625" />
         <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/item_home_service.xml" value="0.25" />
         <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/item_news.xml" value="0.33" />
+        <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/item_order.xml" value="0.5" />
         <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/layout_home_news.xml" value="0.15172101449275363" />
         <entry key="..\:/Users/LumYuan/AndroidStudioProjects/SmartCity/app/src/main/res/layout/menu_navigation_item.xml" value="0.5" />
       </map>

@@ -1,7 +1,5 @@
 package com.example.smartcity.net.pojo
 
-import com.example.smartcity.bean.BaseBean
-
 class UserBean {
     var avatar: String? = null
     var balance: Long? = null

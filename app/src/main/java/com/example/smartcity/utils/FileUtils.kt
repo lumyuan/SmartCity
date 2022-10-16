@@ -13,20 +13,27 @@ object FileUtils {
 
     fun readBytes(path: String): ByteArray {
         val fileInputStream = FileInputStream(path)
-        val bufferedInputStream = BufferedInputStream(fileInputStream)
+        return read(fileInputStream)
+    }
+
+    fun read(inputStream: InputStream): ByteArray {
+        val bufferedInputStream = BufferedInputStream(inputStream)
         val readBytes = bufferedInputStream.readBytes()
         bufferedInputStream.close()
-        fileInputStream.close()
+        inputStream.close()
         return readBytes
     }
 
+    fun write(outputStream: OutputStream, bytes: ByteArray){
+        val bufferedOutputStream = BufferedOutputStream(outputStream)
+        bufferedOutputStream.write(bytes)
+        bufferedOutputStream.close()
+        outputStream.close()
+    }
 
     fun writeBytes(path: String, bytes: ByteArray){
         val fileOutputStream = FileOutputStream(path)
-        val bufferedOutputStream = BufferedOutputStream(fileOutputStream)
-        bufferedOutputStream.write(bytes)
-        bufferedOutputStream.close()
-        fileOutputStream.close()
+        write(fileOutputStream, bytes)
     }
 
     fun readText(path: String): String? {

@@ -13,6 +13,7 @@ import com.example.smartcity.net.Repository
 import com.example.smartcity.net.params.LoginBean
 import com.example.smartcity.ui.NavigationBar
 import com.example.smartcity.ui.adapters.FragmentPagerView
+import com.example.smartcity.utils.FastFunctionUtils
 import com.example.smartcity.utils.LogUtils
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -25,7 +26,10 @@ class MainActivity : BaseActivity() {
     /*首页、全部服务、智慧党建、新闻、个人中心*/
     override fun initView() {
         super.initView()
-        
+
+        //获取外部存储权限
+        FastFunctionUtils.getWritePermission(this)
+
         //初始化滑动窗体
         binding.mainViewpager.apply {
             val fragments = ArrayList<Fragment>().apply {

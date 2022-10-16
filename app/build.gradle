@@ -10,8 +10,8 @@ android {
         applicationId "com.example.smartcity"
         minSdk 21
         targetSdk 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 10
+        versionName "1.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

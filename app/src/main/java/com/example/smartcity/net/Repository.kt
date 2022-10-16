@@ -2,11 +2,13 @@ package com.example.smartcity.net
 
 import com.example.smartcity.bean.BaseBean
 import com.example.smartcity.common.ApiException
-import com.example.smartcity.net.params.LoginBean
-import com.example.smartcity.net.params.RegisterBean
+import com.example.smartcity.net.params.*
 import com.example.smartcity.net.pojo.ResponseListBean
 import com.example.smartcity.net.pojo.*
-import com.example.smartcity.utils.LogUtils
+import okhttp3.MediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import java.io.File
 
 /**
  * 接口资源
@@ -96,7 +98,53 @@ object Repository {
      */
     suspend fun getUser(token: String): GetUserBean{
         return NetworkService.api.getUser(token).let {
-            LogUtils.print(it)
+            preprocessData(it)
+        }
+    }
+
+    /**
+     * 文件上传
+     */
+    suspend fun uploadFile(file: File, token: String): UploadFileBean {
+        val requestBody = RequestBody.create(MediaType.parse("image/*"), file)
+        val create = MultipartBody.Part.createFormData("file", file.name, requestBody)
+        return NetworkService.api.uploadFile(token, create).let {
+            preprocessData(it)
+        }
+    }
+
+    /**
+     * 修改用户信息
+     */
+    suspend fun updateUser(token: String, updateUserBean: UpdateUserBean): BaseBean {
+        return NetworkService.api.updateUser(token, updateUserBean).let {
+            preprocessData(it)
+        }
+    }
+
+    /**
+     * 获取订单列表
+     */
+    suspend fun getOrderList(token: String): ResponseListBean<OrderBean>{
+        return NetworkService.api.getOrderList(token).let {
+            preprocessData(it)
+        }
+    }
+
+    /**
+     * 修改密码
+     */
+    suspend fun updatePassword(token: String, updatePasswordBean: UpdatePasswordBean): BaseBean {
+        return  NetworkService.api.updatePassword(token, updatePasswordBean).let {
+            preprocessData(it)
+        }
+    }
+
+    /**
+     * 意见反馈
+     */
+    suspend fun feedback(token: String, feedbackBean: FeedbackBean): BaseBean {
+        return NetworkService.api.feedback(token, feedbackBean).let {
             preprocessData(it)
         }
     }

@@ -35,4 +35,15 @@
     <string name="feedback">意见反馈</string>
     <string name="sign_out">退出登录</string>
     <string name="please_sign_in">请先登录</string>
+    <string name="update_user_info">修改个人信息</string>
+    <string name="nickname">昵称</string>
+    <string name="email">邮箱</string>
+    <string name="id_card">身份证</string>
+    <string name="tel">手机号</string>
+    <string name="to_bottom">到底啦~</string>
+    <string name="old_password">旧密码</string>
+    <string name="new_password">新密码</string>
+    <string name="update_password">修改密码</string>
+    <string name="fb_title">反馈标题</string>
+    <string name="fb_content">反馈内容</string>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.smartcity.net
 
-import com.example.smartcity.common.Gson
 import java.util.concurrent.TimeUnit
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
