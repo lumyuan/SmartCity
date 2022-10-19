@@ -7,6 +7,7 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
+import com.example.smartcity.R
 import com.gyf.immersionbar.ImmersionBar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
@@ -26,10 +27,10 @@ abstract class BaseActivity: AppCompatActivity(), CoroutineScope by MainScope(){
         super.onCreate(savedInstanceState)
         val uiModeManager = getSystemService(UI_MODE_SERVICE) as UiModeManager
         ImmersionBar.with(this)
-            .transparentStatusBar()  //透明状态栏，不写默认透明色
+            .transparentStatusBar()
             .statusBarDarkFont(uiModeManager.nightMode == UiModeManager.MODE_NIGHT_NO)
-//            .keyboardEnable(true)  //解决软键盘与底部输入框冲突问题，默认为false，还有一个重载方法，可以指定软键盘mode
-//            .keyboardMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)  //单独指定软键盘模式
+            .keyboardEnable(true)  //解决软键盘与底部输入框冲突问题，默认为false，还有一个重载方法，可以指定软键盘mode
+            .keyboardMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)  //单独指定软键盘模式
             .init()
         initView()
     }

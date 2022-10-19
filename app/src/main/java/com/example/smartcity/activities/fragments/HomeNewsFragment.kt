@@ -1,21 +1,20 @@
 package com.example.smartcity.activities.fragments
 
-import android.icu.text.CaseMap
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.smartcity.R
 import com.example.smartcity.base.BaseFragment
-import com.example.smartcity.base.BaseViewModel
 import com.example.smartcity.bean.LoadState
 import com.example.smartcity.databinding.FragmentHomeNewsBinding
 import com.example.smartcity.model.HomeNewsModel
+import com.example.smartcity.net.pojo.NewsBean
 import com.example.smartcity.ui.adapters.NewsListAdapter
+import java.text.SimpleDateFormat
 
 private const val ARG_TITLE = "title"
 
@@ -45,6 +44,8 @@ class HomeNewsFragment : BaseFragment() {
     }
 
     private lateinit var viewModel: HomeNewsModel
+    @SuppressLint("SimpleDateFormat")
+    private val dateFormat = SimpleDateFormat("yyyy-MM-dd")
     override fun loadSingData(activity: AppCompatActivity) {
         super.loadSingData(activity)
         viewModel = ViewModelProvider(this)[HomeNewsModel::class.java]
@@ -54,7 +55,18 @@ class HomeNewsFragment : BaseFragment() {
 
         //加载新闻资讯
         viewModel.newsData.observe(this){
-            binding.list.adapter = NewsListAdapter(it.rows!!)
+            val list = it.rows!!
+            //按发布时间排序
+            list.sortWith { o1, o2 ->
+                val od = dateFormat.parse(o1?.publishDate!!)
+                val nd = dateFormat.parse(o2?.publishDate!!)
+                if (od!! > nd) {
+                    -1
+                } else {
+                    1
+                }
+            }
+            binding.list.adapter = NewsListAdapter(list)
         }
 
         //网络请求状态

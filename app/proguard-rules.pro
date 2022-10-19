@@ -21,3 +21,4 @@
 #-renamesourcefileattribute SourceFile
 
 -keep class com.example.smartcity.net.pojo.** { *; }
+-keep class com.example.smartcity.net.params.** { *; }

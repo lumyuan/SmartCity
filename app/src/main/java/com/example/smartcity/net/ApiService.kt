@@ -55,4 +55,16 @@ interface ApiService {
 
     @POST("/prod-api/api/common/feedback")
     suspend fun feedback(@Header("Authorization") token: String, @Body feedbackBean: FeedbackBean): BaseBean
+
+    @GET("/prod-api/press/press/{id}")
+    suspend fun watchNews(@Path("id") id: Int): WatchNewsParentBean<WatchNewsBean>
+
+    @GET("/prod-api/press/comments/list")
+    suspend fun getCommentList(@Query("newsId") newsId: Int): ResponseListBean<CommentBean>
+
+    @GET("/prod-api/press/press/list")
+    suspend fun getTopNews(@Query("top") isTop: String): ResponseListBean<NewsBean>
+
+    @POST("/prod-api/press/pressComment")
+    suspend fun postComment(@Header("Authorization") token: String, @Body postCommentBean: PostCommentBean): BaseBean
 }

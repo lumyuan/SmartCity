@@ -1,6 +1,7 @@
 package com.example.smartcity.ui.adapters
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.text.Html
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.example.smartcity.R
+import com.example.smartcity.activities.WatchNewsActivity
 import com.example.smartcity.base.MyViewHolder
 import com.example.smartcity.databinding.ItemNewsBinding
 import com.example.smartcity.model.SmartCitySettingsModel
@@ -54,6 +56,12 @@ class NewsListAdapter(private val list: ArrayList<NewsBean>): RecyclerView.Adapt
             binding.toBottom.visibility = View.VISIBLE
         }else {
             binding.toBottom.visibility = View.GONE
+        }
+        //跳转到新闻页
+        binding.root.setOnClickListener {
+            val intent = Intent(it.context, WatchNewsActivity::class.java)
+            intent.putExtra("id", newsBean.id)
+            it.context.startActivity(intent)
         }
     }
 

@@ -3,28 +3,26 @@ package com.example.smartcity.ui.adapters
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager.widget.ViewPager
 import com.bumptech.glide.Glide
 import com.example.smartcity.R
 import com.example.smartcity.base.MyViewHolder
-import com.example.smartcity.databinding.ItemHomeServiceBinding
-import com.example.smartcity.model.MainViewInternetModel
+import com.example.smartcity.databinding.ItemAllServiceBinding
 import com.example.smartcity.model.SmartCitySettingsModel
 import com.example.smartcity.net.pojo.ServiceBean
 
-class HomeServiceAdapter(private val list: ArrayList<ServiceBean>): RecyclerView.Adapter<MyViewHolder<ItemHomeServiceBinding>>() {
+class AllServiceAdapter(private val list: ArrayList<ServiceBean>): RecyclerView.Adapter<MyViewHolder<ItemAllServiceBinding>>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): MyViewHolder<ItemHomeServiceBinding> {
+    ): MyViewHolder<ItemAllServiceBinding> {
         return MyViewHolder(
-            ItemHomeServiceBinding.bind(
-                View.inflate(parent.context, R.layout.item_home_service, null)
+            ItemAllServiceBinding.bind(
+                View.inflate(parent.context, R.layout.item_all_service, null)
             )
         )
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder<ItemHomeServiceBinding>, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder<ItemAllServiceBinding>, position: Int) {
         val binding = holder.binding
         val serviceBean = list[position]
         val smartCitySettingsBean = SmartCitySettingsModel.smartCitySettings.value!!
@@ -34,17 +32,7 @@ class HomeServiceAdapter(private val list: ArrayList<ServiceBean>): RecyclerView
             .into(binding.icon)
         binding.title.text = serviceBean.serviceName
         binding.root.setOnClickListener {
-            when (serviceBean.serviceName) {
-                "全部服务" -> {
-                    val view = MainViewInternetModel.getView("viewpager")
-                    if (view is ViewPager){
-                        view.currentItem = 1
-                    }
-                }
-                else -> {
 
-                }
-            }
         }
     }
 

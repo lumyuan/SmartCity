@@ -148,4 +148,40 @@ object Repository {
             preprocessData(it)
         }
     }
+
+    /**
+     * 获取新闻详情
+     */
+    suspend fun watchNews(id: Int): WatchNewsParentBean<WatchNewsBean> {
+        return NetworkService.api.watchNews(id).let {
+            preprocessData(it)
+        }
+    }
+
+    /**
+     * 获取新闻评论
+     */
+    suspend fun getCommentList(newsId: Int): ResponseListBean<CommentBean> {
+        return NetworkService.api.getCommentList(newsId).let {
+            preprocessData(it)
+        }
+    }
+
+    /**
+     * 获取推荐新闻
+     */
+    suspend fun getTopNews(isTop: String): ResponseListBean<NewsBean>{
+        return NetworkService.api.getTopNews(isTop).let {
+            preprocessData(it)
+        }
+    }
+
+    /**
+     * 发表新闻评论
+     */
+    suspend fun postComment(token: String, postCommentBean: PostCommentBean): BaseBean {
+        return NetworkService.api.postComment(token, postCommentBean).let {
+            preprocessData(it)
+        }
+    }
 }

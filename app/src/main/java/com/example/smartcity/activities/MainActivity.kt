@@ -9,6 +9,7 @@ import com.example.smartcity.core.UserLoginLoader
 import com.example.smartcity.databinding.ActivityMainBinding
 import com.example.smartcity.model.GetUserModel
 import com.example.smartcity.model.LoginModel
+import com.example.smartcity.model.MainViewInternetModel
 import com.example.smartcity.net.Repository
 import com.example.smartcity.net.params.LoginBean
 import com.example.smartcity.ui.NavigationBar
@@ -23,6 +24,7 @@ class MainActivity : BaseActivity() {
 
     private lateinit var loginViewModel: LoginModel
     private lateinit var getUserModel: GetUserModel
+
     /*首页、全部服务、智慧党建、新闻、个人中心*/
     override fun initView() {
         super.initView()
@@ -64,6 +66,9 @@ class MainActivity : BaseActivity() {
                 getUserModel.getUser(it.token!!)
             }
         }
+
+        //向外部共享组件
+        MainViewInternetModel.putView("viewpager", binding.mainViewpager)
     }
 
     override fun onResume() {
